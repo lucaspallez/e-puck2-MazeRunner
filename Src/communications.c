@@ -1,8 +1,8 @@
 #include "ch.h"
 #include "hal.h"
-#include <main.h>
+#include <Inc/main.h>
 
-#include <communications.h>
+#include <Inc/communications.h>
 
 /*
 *	Sends floats numbers to the computer

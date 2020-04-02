@@ -1,46 +1,14 @@
-build/obj/main.o: Src/main.c \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdio.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\newlib.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_newlib_version.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\config.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\ieeefp.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\features.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\cdefs.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_default_types.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdarg.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\reent.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_types.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_types.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\lock.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\types.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_stdint.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\endian.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_endian.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\select.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_sigset.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timeval.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\timespec.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timespec.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_pthreadtypes.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\sched.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\types.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\stdio.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdlib.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\stdlib.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\alloca.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\string.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\xlocale.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\strings.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\string.h \
- c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\math.h \
+build/obj/fft.o: Src/fft.c \
  e-puck2_main-processor/ChibiOS//os/rt/include/ch.h \
  e-puck2_main-processor/ChibiOS//os/rt/ports/ARMCMx/compilers/GCC/chtypes.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdint.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdint.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_default_types.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\features.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_newlib_version.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_intsup.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_stdint.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdbool.h \
  e-puck2_main-processor/src/chconf.h \
  e-puck2_main-processor/ChibiOS//os/rt/include/chlicense.h \
@@ -131,15 +99,8 @@ build/obj/main.o: Src/main.c \
  e-puck2_main-processor/src/mcuconf.h \
  e-puck2_main-processor/ChibiOS_ext/os/hal/ports/STM32/STM32F4xx/stm32_registry.h \
  e-puck2_main-processor/ChibiOS//os/hal/include/mmc_spi.h \
- e-puck2_main-processor/ChibiOS//os/hal/include/serial_usb.h \
- e-puck2_main-processor/src/memory_protection.h \
- e-puck2_main-processor/src/usbcfg.h e-puck2_main-processor/src/motors.h \
- e-puck2_main-processor/src/audio/microphone.h \
- e-puck2_main-processor/src/audio/mp45dt02_processing.h \
- e-puck2_main-processor/ChibiOS//os/hal/lib/streams/chprintf.h \
- e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h \
- e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/core_cm4.h \
- Inc/main.h e-puck2_main-processor/src/camera/dcmi_camera.h \
+ e-puck2_main-processor/ChibiOS//os/hal/include/serial_usb.h Inc/main.h \
+ e-puck2_main-processor/src/camera/dcmi_camera.h \
  e-puck2_main-processor/ChibiOS_ext/os/hal/include/dcmi.h \
  e-puck2_main-processor/ChibiOS_ext/os/hal/include/../ports/STM32/STM32F4xx/dcmi_lld.h \
  e-puck2_main-processor/ChibiOS_ext/os/hal/include/../ports/STM32/STM32F4xx/stm32_registry.h \
@@ -148,92 +109,62 @@ build/obj/main.o: Src/main.c \
  e-puck2_main-processor/src/msgbus/messagebus.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\unistd.h \
  c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\unistd.h \
- e-puck2_main-processor/src/parameter/parameter.h Inc/fft.h \
- Inc/audio_processing.h Inc/communications.h
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdio.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\newlib.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_newlib_version.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\config.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\ieeefp.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\features.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\cdefs.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_default_types.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdarg.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\reent.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_types.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_types.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\lock.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\types.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_stdint.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\endian.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_endian.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\select.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_sigset.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timeval.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\timespec.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timespec.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_pthreadtypes.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\sched.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\types.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\stdio.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdlib.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\stdlib.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\alloca.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\string.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\xlocale.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\strings.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\string.h:
-
-c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\math.h:
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\newlib.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\config.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\ieeefp.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\cdefs.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\types.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_types.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_types.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\lock.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\endian.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_endian.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\select.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_sigset.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timeval.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\timespec.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timespec.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_pthreadtypes.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\sched.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\types.h \
+ e-puck2_main-processor/src/parameter/parameter.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdlib.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\reent.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\stdlib.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\alloca.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\math.h \
+ Inc/fft.h \
+ e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h \
+ e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/core_cm4.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\string.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\xlocale.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\strings.h \
+ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\string.h \
+ e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_const_structs.h \
+ e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h \
+ e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_common_tables.h
 
 e-puck2_main-processor/ChibiOS//os/rt/include/ch.h:
 
 e-puck2_main-processor/ChibiOS//os/rt/ports/ARMCMx/compilers/GCC/chtypes.h:
 
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stddef.h:
+
 c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdint.h:
 
 c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdint.h:
 
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_default_types.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\features.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_newlib_version.h:
+
 c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_intsup.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_stdint.h:
 
 c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\lib\gcc\arm-none-eabi\7.2.1\include\stdbool.h:
 
@@ -417,22 +348,6 @@ e-puck2_main-processor/ChibiOS//os/hal/include/mmc_spi.h:
 
 e-puck2_main-processor/ChibiOS//os/hal/include/serial_usb.h:
 
-e-puck2_main-processor/src/memory_protection.h:
-
-e-puck2_main-processor/src/usbcfg.h:
-
-e-puck2_main-processor/src/motors.h:
-
-e-puck2_main-processor/src/audio/microphone.h:
-
-e-puck2_main-processor/src/audio/mp45dt02_processing.h:
-
-e-puck2_main-processor/ChibiOS//os/hal/lib/streams/chprintf.h:
-
-e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h:
-
-e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/core_cm4.h:
-
 Inc/main.h:
 
 e-puck2_main-processor/src/camera/dcmi_camera.h:
@@ -453,10 +368,74 @@ c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none
 
 c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\unistd.h:
 
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\newlib.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\config.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\ieeefp.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\cdefs.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\types.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_types.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_types.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\lock.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\endian.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\_endian.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\select.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_sigset.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timeval.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\timespec.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_timespec.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\_pthreadtypes.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\sched.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\types.h:
+
 e-puck2_main-processor/src/parameter/parameter.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\stdlib.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\_ansi.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\reent.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\machine\stdlib.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\alloca.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\math.h:
 
 Inc/fft.h:
 
-Inc/audio_processing.h:
+e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h:
 
-Inc/communications.h:
+e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/core_cm4.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\string.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\xlocale.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\strings.h:
+
+c:\users\lucas\desktop\epfl\microinformatique\eclipse_e-puck2\tools\gcc-arm-none-eabi-7-2017-q4-major-win32\arm-none-eabi\include\sys\string.h:
+
+e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_const_structs.h:
+
+e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_math.h:
+
+e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/arm_common_tables.h:

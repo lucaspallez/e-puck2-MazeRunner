@@ -1,8 +1,8 @@
 #include "ch.h"
 #include "hal.h"
-#include <main.h>
+#include <Inc/main.h>
 #include <math.h>
-#include <fft.h>
+#include <Inc/fft.h>
 
 #include <arm_math.h>
 #include <arm_const_structs.h>

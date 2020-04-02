@@ -9,8 +9,10 @@ PROJECT = MazeRunner
 GLOBAL_PATH = e-puck2_main-processor
 
 #Source files to include
-CSRC += ./main.c \
-
+CSRC += ./Src/main.c \
+		./Src/audio_processing.c \
+		./Src/communications.c \
+		./Src/fft.c \
 #Header folders to include
 INCDIR += 
 
