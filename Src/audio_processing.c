@@ -10,6 +10,8 @@
 #include <Inc/fft.h>
 #include <Inc/motor_control.h>
 #include <arm_math.h>
+#include <sensors/proximity.h>
+
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
@@ -128,7 +130,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		if(mustSend > 8){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SDU1, "%f\n", freq);
+			//chprintf((BaseSequentialStream *)&SDU1, "%f\n", freq);
+			chprintf((BaseSequentialStream *)&SDU1, "Sensor 1:%d\n Sensor 2:%d\n ", get_prox(0), get_prox(7));
 			mustSend = 0;
 		}
 		nb_samples = 0;
