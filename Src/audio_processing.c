@@ -4,11 +4,11 @@
 #include <usbcfg.h>
 #include <chprintf.h>
 
-#include <motors.h>
 #include <audio/microphone.h>
 #include <Inc/audio_processing.h>
 #include <Inc/communications.h>
 #include <Inc/fft.h>
+#include <Inc/motor_control.h>
 #include <arm_math.h>
 
 //semaphore
@@ -134,6 +134,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		nb_samples = 0;
 		mustSend++;
 
+		motor_control(freq);
 	}
 }
 
