@@ -17,7 +17,7 @@ CSRC += ./Src/main.c \
 		./Src/proximity_control.c \
 		
 #Header folders to include
-INCDIR += 
+INCDIR += ./Inc/
 
 #Jump to the main Makefile
 include $(GLOBAL_PATH)/Makefile
