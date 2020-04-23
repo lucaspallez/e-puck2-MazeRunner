@@ -20,10 +20,13 @@ static THD_FUNCTION(wall_detection_thd, arg)
 		uint16_t prox_right_corrected = 0;
 		uint16_t score_temp = 0;
 
-		prox_front_average =  get_calibrated_prox(IR_FRONT_LEFT) + get_calibrated_prox(IR_FRONT_RIGHT);	//Getting sensor data and taking the average
-		prox_front_average /= NB_SENSOR;
+		//prox_front_average =  get_calibrated_prox(IR_FRONT_LEFT) + get_calibrated_prox(IR_FRONT_RIGHT);	//Getting sensor data and taking the average
+		//prox_front_average /= NB_SENSOR;
 
-		if(prox_front_average >= PROX_THRESHOLD) //If everything is alright
+		if((get_calibrated_prox(IR_FRONT_LEFT) >= PROX_THRESHOLD) ||
+		   (get_calibrated_prox(IR_FRONT_RIGHT) >= PROX_THRESHOLD) ||
+		   (get_calibrated_prox(IR_49D_LEFT) >= PROX_THRESHOLD) ||
+		   (get_calibrated_prox(IR_49D_RIGHT) >= PROX_THRESHOLD)) //If everything is alright
 		{
 			palClearPad(GPIOD, GPIOD_LED_FRONT);
 			palClearPad(GPIOB, GPIOB_LED_BODY);
@@ -36,7 +39,8 @@ static THD_FUNCTION(wall_detection_thd, arg)
 
 		prox_side_average =  get_calibrated_prox(IR_LEFT) + get_calibrated_prox(IR_RIGHT);	//Getting sensor data and taking the average
 		prox_side_average /= NB_SENSOR;
-		prox_left_corrected = get_calibrated_prox(IR_LEFT) - prox_side_average;
+		prox_left_corrected = get_calibrated_prox(IR_LEFT) - prox_side_average; //works when going straight
+		prox_right_corrected = get_calibrated_prox(IR_RIGHT) - prox_side_average;
 
 		chThdSleepUntilWindowed(time, time + MS2ST(10)); //reduced the sample rate to 100Hz
     }
