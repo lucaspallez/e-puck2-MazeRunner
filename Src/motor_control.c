@@ -30,85 +30,84 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 //	right_motor_set_pos(0);
 	  //Violon:
 
-
-	int x=0; //position note du robot
-	int f=0; //position de la frequence ecoutee
-	int diff;
-	int rotation; //1 si rotation en cours, 0 sinon
+	static int x=0; //position note du robot
+	static int f=0; //position de la frequence ecoutee
+	static int diff = 0;
+	static int rotation = 0; //1 si rotation en cours, 0 sinon
 
 	//Codage de la frequence ecoutee en fonction du schema //Violon:
-	if (frequency>250 && frequency<280) f=0; //Do: 265.625
-	else if (frequency>280 && frequency<312) f=1; //Re: 296.875
-	else if (frequency>312 && frequency<358) f=2; //Mi: 328.125
-	else if (frequency>358 && frequency<390) f=3; //Fa: 375
-	else if (frequency>390 && frequency<430) f=4; //Sol: 406.25
-	else if (frequency>430 && frequency<480) f=5; //La: 453.125
+	if ((frequency>250) && (frequency<280)) f=0; //Do: 265.625
+	else if ((frequency>280) && (frequency<312)) f=1; //Re: 296.875
+	else if ((frequency>312) && (frequency<358)) f=2; //Mi: 328.125
+	else if ((frequency>358) && (frequency<390)) f=3; //Fa: 375
+	else if ((frequency>390) && (frequency<430)) f=4; //Sol: 406.25
+	else if ((frequency>430) && (frequency<480)) f=5; //La: 453.125
 	else f=6;
 
 	// condition de deplacement
 	if (f==x)
-		{
-			go_straight();
-			rotation=0;
-		}
+	{
+		go_straight();
+		rotation=0;
+	}
 	if (rotation==0)
+	{
+		rotation=1;
+		if (f>x)
 		{
-			rotation=1;
-			if (f>x)
+			if ((diff=f-x)>3)
+			{
+				//turn left 6-diff steps
+				turn_left();
+				if ((left_motor_get_pos()<(-1)*(1000/6)*(6-diff)) && (right_motor_get_pos()>(1000/6)*(6-diff)))
 				{
-					if ((diff=f-x)>3)
-							{
-								//turn left 6-diff steps
-								turn_left();
-								if ((left_motor_get_pos()<(-1)*(1000/6)*(6-diff)) && (right_motor_get_pos()>(1000/6)*(6-diff)))
-									{
-										stop();
-										rotation=0;
-										left_motor_set_pos(0);
-										right_motor_set_pos(0);
-									}
-							}
-					else
-							{
-								//turn right diff steps
-								turn_right();
-								if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
-									{
-										stop();
-										rotation=0;
-										left_motor_set_pos(0);
-										right_motor_set_pos(0);
-									}
-							}
+					stop();
+					rotation=0;
+					left_motor_set_pos(0);
+					right_motor_set_pos(0);
 				}
-			else if (f<x)
+			}
+			else
+			{
+				//turn right diff steps
+				turn_right();
+				if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
 				{
-					if ((diff = x-f) >3)
-						{
-							//turn right 6-diff steps
-							turn_right();
-							if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
-								{
-									stop();
-									rotation=0;
-									left_motor_set_pos(0);
-									right_motor_set_pos(0);
-								}
-						}
-					else // turn left diff steps
-						{
-							turn_right();
-							if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
-								{
-									stop();
-									rotation=0;
-									left_motor_set_pos(0);
-									right_motor_set_pos(0);
-								}
-					}
+					stop();
+					rotation=0;
+					left_motor_set_pos(0);
+					right_motor_set_pos(0);
 				}
-			x=f; //new position
+			}
 		}
+		else
+		{
+			if ((diff = x-f) >3)
+			{
+				//turn right 6-diff steps
+				turn_right();
+				if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
+				{
+					stop();
+					rotation=0;
+					left_motor_set_pos(0);
+					right_motor_set_pos(0);
+				}
+			}
+			else // turn left diff steps
+			{
+				turn_right();
+				if ((right_motor_get_pos()<(-1)*(1000/6)*diff) && (left_motor_get_pos()>(1000/6)*diff))
+				{
+					stop();
+					rotation=0;
+					left_motor_set_pos(0);
+					right_motor_set_pos(0);
+				}
+			}
+		}
+			x=f; //new position
+	}
 	if(f==6)
 		stop();
 
