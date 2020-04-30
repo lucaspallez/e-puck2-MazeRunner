@@ -32,7 +32,7 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 
 	static int x=0; //position note du robot
 
-	static int f=3; //position de la frequence ecoutee changement intialisation
+	static int f=0; //position de la frequence ecoutee changement intialisation
 
 	static int diff = 0;
 	static int rotation = 0;//1 si rotation en cours, 0 sinon
@@ -41,16 +41,16 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 	//Codage de la frequence ecoutee en fonction du schema //Violon:
 	// condition nécessaire pour éviter changement de comportement avant la fin d'une rotation,
 	//on rend le robot sourd jusqu'à la fin de la rotation
-//	if (rotation==0)
-//	{
+    if (rotation==0)
+    {
 //		if ((frequency>250) && (frequency<280)) f=0; //Do: 265.625
 //		else if ((frequency>280) && (frequency<312)) f=1; //Re: 296.875
 //		else if ((frequency>312) && (frequency<358)) f=2; //Mi: 328.125
-//		else if ((frequency>358) && (frequency<390)) f=3; //Fa: 375
+		if ((frequency>358) && (frequency<390)) f=3; //Fa: 375  kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 //		else if ((frequency>390) && (frequency<430)) f=4; //Sol: 406.25
 //		else if ((frequency>430) && (frequency<480)) f=5; //La: 453.125
 //		else f=6;
-//	}
+    }
 
 	if (f==x)
 	{
@@ -64,7 +64,7 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 			//turn left 6-diff steps
 			turn_left();
 			rotation=1;
-			if ((left_motor_get_pos()<(-1)*(1000/6)*(6-diff)) && (right_motor_get_pos()>(1000/6)*(6-diff)))
+			if ((left_motor_get_pos()<(-1)*((53/41)*1000/6)*(6-diff)) && (right_motor_get_pos()>((53/41)*1000/6)*(6-diff)))
 			{
 				stop();
 				rotation=0;
