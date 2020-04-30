@@ -146,6 +146,7 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 //	}
 
 	if((f==6)) stop();
+}
 
 
 void go_straight(void)
@@ -168,4 +169,5 @@ void stop(void)
 	left_motor_set_speed(0);
 	right_motor_set_speed(0);
 }
+
 
