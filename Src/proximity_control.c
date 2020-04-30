@@ -8,6 +8,8 @@
 
 
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
+static uint16_t prox_side_average = 0;
+static int16_t prox_side_diff = 0;
 
 static THD_WORKING_AREA(wall_detection_thd_wa, 256);
 static THD_FUNCTION(wall_detection_thd, arg)
@@ -15,6 +17,9 @@ static THD_FUNCTION(wall_detection_thd, arg)
 	(void) arg;
     chRegSetThreadName(__FUNCTION__);
     systime_t time;
+    static uint8_t average_count = 0;
+    static uint16_t prox_left_avg = 0, prox_right_avg = 0, prox_left_temp = 0, prox_right_temp = 0;
+
 
     while(1)
     {
@@ -34,6 +39,24 @@ static THD_FUNCTION(wall_detection_thd, arg)
 			palSetPad(GPIOB, GPIOB_LED_BODY);
 		}
 
+
+		prox_left_temp += get_calibrated_prox(IR_LEFT);
+		prox_right_temp += get_calibrated_prox(IR_RIGHT);
+
+		if(average_count == 10) //taking 10 values and averaging them
+		{
+			prox_left_avg = prox_left_temp/average_count;
+			prox_right_avg = prox_right_temp/average_count;
+			prox_side_diff =  prox_left_avg - prox_right_avg;	//Getting sensor data and taking the difference
+			prox_side_average = (prox_left_avg + prox_right_avg)/NB_SENSOR;
+			//chBSemSignal(&sendToComputer_sem);
+			//chprintf((BaseSequentialStream *)&SDU1, "D_diff_t:%d\nD_avg_t:%d\n", prox_side_diff, prox_side_average); //works
+			average_count = 0;
+			prox_left_temp = 0;
+			prox_right_temp = 0;
+		}
+		average_count++;
+
 		chThdSleepUntilWindowed(time, time + MS2ST(10)); //reduced the sample rate to 100Hz
     }
 }
@@ -44,17 +67,14 @@ static THD_FUNCTION(score_thd, arg) //Works but not reliable at all. Need to fin
 	(void) arg;
     chRegSetThreadName(__FUNCTION__);
     systime_t time;
-    uint16_t prox_side_average = 0;
-	int16_t prox_side_diff = 0;
 	static float score = 0;
 	static uint64_t counter = 0;
-
+	static uint8_t must_send = 0;
 
     while(1)
     {
     	time = chVTGetSystemTime();
-		prox_side_diff =  get_calibrated_prox(IR_LEFT) - get_calibrated_prox(IR_RIGHT);	//Getting sensor data and taking the difference
-		prox_side_average = (get_calibrated_prox(IR_LEFT) + get_calibrated_prox(IR_RIGHT))/NB_SENSOR;
+
 		if(prox_side_diff <= NOISE_THRESHOLD)
 		{
 			score++; //+1 for perfect score
@@ -62,16 +82,15 @@ static THD_FUNCTION(score_thd, arg) //Works but not reliable at all. Need to fin
 		}
 		else if(prox_side_diff < WALL_WIDTH_THRESHOLD)
 		{
-			if((((float)prox_side_diff)/((float) prox_side_average)) < MAX_SCORE_PER_COUNT)
+			if((((float) prox_side_diff)/((float) prox_side_average)) < MAX_SCORE_PER_COUNT)
 				score += (1 - ((float) prox_side_diff)/((float) prox_side_average));
 			counter++;
 		}
 		score /= counter; //final score calculation [%]
-		static uint8_t must_send = 0;
 		if(must_send == 10) //reduce debug message frequency to 1Hz
 		{
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SDU1, "Score:%f\n ", score);
+			chprintf((BaseSequentialStream *)&SDU1, "Score:%f\n Diff:%d\n Avg:%d\n", score, prox_side_diff, prox_side_average);
 			must_send = 0;
 		}
 		must_send++;

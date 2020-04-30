@@ -55,7 +55,7 @@ int main(void)
 	proximity_start();
 	messagebus_init(&bus, &bus_lock, &bus_condvar);
 	wall_detection_start();
-	//score_calculation_start(); //Works but not reliable yet
+	score_calculation_start(); //Works but not reliable yet
 
 	//Audio Recording
 	    //send_tab is used to save the state of the buffer to send (double buffering)

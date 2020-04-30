@@ -131,7 +131,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
 			//chprintf((BaseSequentialStream *)&SDU1, "%f\n", freq);
-			chprintf((BaseSequentialStream *)&SDU1, "Sensor Left:%d\n Sensor Right:%d\n ", get_prox(5), get_prox(2));
+			//chprintf((BaseSequentialStream *)&SDU1, "Sensor Left:%d\n Sensor Right:%d\n ", get_prox(5), get_prox(2));
 			mustSend = 0;
 		}
 		nb_samples = 0;
