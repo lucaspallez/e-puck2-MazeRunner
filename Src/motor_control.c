@@ -37,6 +37,8 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 	static int diff = 0;
 	static int rotation = 0;//1 si rotation en cours, 0 sinon
 	////balblabla
+	frequency= filtre(frequency);
+
 
 	//Codage de la frequence ecoutee en fonction du schema //Violon:
 	// condition nécessaire pour éviter changement de comportement avant la fin d'une rotation,
@@ -168,6 +170,20 @@ void stop(void)
 {
 	left_motor_set_speed(0);
 	right_motor_set_speed(0);
+}
+int filtre(int frequency)
+{
+	static int tableau[5] = {0};
+	static int i=0;
+	int j;
+	int moyenne;
+	tableau[i]=frequency;
+	i++;
+	if (i==4) i=0;
+	for (j=0; j<=4 ;j++) moyenne=+tableau[j];
+	moyenne=moyenne/5;
+	return moyenne;
+
 }
 
 

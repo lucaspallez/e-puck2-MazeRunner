@@ -6,5 +6,6 @@ void stop(void);
 void turn_left(void);
 void turn_right(void);
 void go_straight(void);
+int filtre(int frequency);
 
 #endif /* INC_MOTOR_CONTROL_H_ */
