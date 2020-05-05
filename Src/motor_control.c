@@ -91,7 +91,7 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 			//turn left 6-diff steps
 			turn_left();
 			rotation=1;
-			if ((left_motor_get_pos()<(-1)*((float)53/(float)41)*((float)1000/(float)6)*(6-diff)) && (right_motor_get_pos()>((float)53/(float)41)*((float)1000/(float)6)*(6-diff)))
+			if ((left_motor_get_pos()<(-1)*(((float)53)/((float)41))*(((float)1000)/((float)6))*(6-diff)) && (right_motor_get_pos()>(((float)53)/((float)41))*(((float)1000)/((float)6))*(6-diff)))
 			{
 				stop();
 				rotation=0;
