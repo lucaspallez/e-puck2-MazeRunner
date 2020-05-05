@@ -45,12 +45,12 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 	//on rend le robot sourd jusqu'à la fin de la rotation
     if (rotation==0)
     {
-		if ((frequency>250) && (frequency<280)) f=0; //Do: 265.625
-		else if ((frequency>280) && (frequency<312)) f=1; //Re: 296.875
-		else if ((frequency>312) && (frequency<358)) f=2; //Mi: 328.125
-    	else if ((frequency>358) && (frequency<390)) f=3; //Fa: 375
-		else if ((frequency>390) && (frequency<430)) f=4; //Sol: 406.25
-		else if ((frequency>430) && (frequency<480)) f=5; //La: 453.125
+		if ((frequency>500) && (frequency<540)) f=0; //Do: 523
+		else if ((frequency>560) && (frequency<610)) f=1; //Re: 587
+		else if ((frequency>630) && (frequency<670)) f=2; //Mi: 659
+    	else if ((frequency>675) && (frequency<720)) f=3; //Fa: 698
+		else if ((frequency>760) && (frequency<810)) f=4; //Sol:783
+		else if ((frequency>850) && (frequency<900)) f=5; //La: 880
 		else f=6;
     }
 
