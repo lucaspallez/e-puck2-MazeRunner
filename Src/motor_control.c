@@ -37,22 +37,26 @@ void motor_control(float frequency) // dit au robot de tourner a droite, gauche 
 	static int diff = 0;
 	static int rotation = 0;//1 si rotation en cours, 0 sinon
 
-	//frequency= filtre(frequency);
 
+	//frequency= filtre(frequency);
+	static float compteur=0;
 
 	//Codage de la frequence ecoutee en fonction du schema //Violon:
 	// condition nécessaire pour éviter changement de comportement avant la fin d'une rotation,
 	//on rend le robot sourd jusqu'à la fin de la rotation
     if (rotation==0)
     {
-		if ((frequency>500) && (frequency<540)) f=0; //Do: 523
-		else if ((frequency>560) && (frequency<610)) f=1; //Re: 587
-		else if ((frequency>630) && (frequency<670)) f=2; //Mi: 659
-    	else if ((frequency>675) && (frequency<720)) f=3; //Fa: 698
-		else if ((frequency>760) && (frequency<810)) f=4; //Sol:783
-		else if ((frequency>850) && (frequency<900)) f=5; //La: 880
-		else f=6;
+//		if ((frequency>500) && (frequency<540)) f=0; //Do: 523
+//		else if ((frequency>560) && (frequency<610)) f=1; //Re: 587
+//		else if ((frequency>630) && (frequency<670)) f=2; //Mi: 659
+//    	else if ((frequency>675) && (frequency<720)) f=3; //Fa: 698
+//		else if ((frequency>760) && (frequency<810)) f=4; //Sol:783
+//		else if ((frequency>850) && (frequency<900)) f=5; //La: 880
+//		else f=6;
+    f=compteur/10;
+    if (f>=6) compteur=0;
     }
+    compteur++;
 
 //	if (f==x)
 //	{
