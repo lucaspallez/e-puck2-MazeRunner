@@ -128,7 +128,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		if(mustSend > 8){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SDU1, "%f\n", freq);
+			//chprintf((BaseSequentialStream *)&SDU1, "%f\n", freq);
 			mustSend = 0;
 		}
 		nb_samples = 0;
