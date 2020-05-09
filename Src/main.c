@@ -9,6 +9,7 @@
 #include <usbcfg.h>
 #include <motors.h>
 #include <audio/microphone.h>
+#include <sensors/proximity.h>
 #include <chprintf.h>
 #include <arm_math.h>
 
@@ -16,6 +17,12 @@
 #include <Inc/fft.h>
 #include <Inc/audio_processing.h>
 #include <Inc/communications.h>
+#include <Inc/proximity_control.h>
+
+
+messagebus_t bus;
+MUTEX_DECL(bus_lock);
+CONDVAR_DECL(bus_condvar);
 
 
 static void serial_start(void)
@@ -44,7 +51,13 @@ int main(void)
 	//inits the motors
 	motors_init();
 
-	static complex_float temp_tab[FFT_SIZE];
+	//start the sensors and the wall detection
+	proximity_start();
+	messagebus_init(&bus, &bus_lock, &bus_condvar);
+	wall_detection_start();
+	score_calculation_start(); //Works but not reliable yet
+
+	//Audio Recording
 	    //send_tab is used to save the state of the buffer to send (double buffering)
 	    //to avoid modifications of the buffer while sending it
 	    static float send_tab[FFT_SIZE];
@@ -55,7 +68,7 @@ int main(void)
 
     /* Infinite loop. */
     while (1) {
-    	//waits until a recd sult must be sent to the computer
+    	//waits until a result must be sent to the computer
 		wait_send_to_computer();
 		//we copy the buffer to avoid conflicts
 		arm_copy_f32(get_audio_buffer_ptr(LEFT_OUTPUT), send_tab, FFT_SIZE);

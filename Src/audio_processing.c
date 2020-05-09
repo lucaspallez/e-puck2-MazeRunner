@@ -10,6 +10,8 @@
 #include <Inc/fft.h>
 #include <Inc/motor_control.h>
 #include <arm_math.h>
+#include <sensors/proximity.h>
+
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
@@ -42,7 +44,7 @@ static float micBack_output[FFT_SIZE];
  * Violon:
  *
  * Do: 265.625
- * Ré: 296.875
+ * Rï¿½: 296.875
  * Mi: 328.125
  * Fa: 375
  * Sol: 406.25
@@ -134,7 +136,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		nb_samples = 0;
 		mustSend++;
 
-		motor_control(freq);
+		//motor_control(freq);
 	}
 }
 
