@@ -49,8 +49,6 @@ static THD_FUNCTION(wall_detection_thd, arg)
 			prox_right_avg = prox_right_temp/average_count;
 			prox_side_diff =  prox_left_avg - prox_right_avg;	//Getting sensor data and taking the difference
 			prox_side_average = (prox_left_avg + prox_right_avg)/NB_SENSOR;
-			//chBSemSignal(&sendToComputer_sem);
-			//chprintf((BaseSequentialStream *)&SDU1, "D_diff_t:%d\nD_avg_t:%d\n", prox_side_diff, prox_side_average); //works
 			average_count = 0;
 			prox_left_temp = 0;
 			prox_right_temp = 0;
@@ -90,14 +88,15 @@ static THD_FUNCTION(score_thd, arg) //Works but not reliable at all. Need to fin
 		if(must_send == 10) //reduce debug message frequency to 1Hz
 		{
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SDU1, "Score:%f\n Diff:%d\n Avg:%d\n", score, prox_side_diff, prox_side_average);
+			//chprintf((BaseSequentialStream *)&SDU1, "Score:%f\n Diff:%d\n Avg:%d\n", score, prox_side_diff, prox_side_average);
 			must_send = 0;
 		}
 		must_send++;
 		chThdSleepUntilWindowed(time, time + MS2ST(100)); //reduced the sample rate to 10Hz
     }
-
 }
+
+
 void wall_detection_start(void)
 {
 	chThdCreateStatic(wall_detection_thd_wa, sizeof(wall_detection_thd_wa), NORMALPRIO, wall_detection_thd, NULL);
