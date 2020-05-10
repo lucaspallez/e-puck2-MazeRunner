@@ -8,8 +8,6 @@
 
 
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
-static uint16_t prox_side_average = 0;
-static int16_t prox_side_diff = 0;
 
 static THD_WORKING_AREA(wall_detection_thd_wa, 256);
 static THD_FUNCTION(wall_detection_thd, arg)
@@ -31,13 +29,13 @@ static THD_FUNCTION(wall_detection_thd, arg)
 		   (get_calibrated_prox(IR_49D_LEFT) >= PROX_THRESHOLD) ||
 		   (get_calibrated_prox(IR_49D_RIGHT) >= PROX_THRESHOLD) ||
 		   (get_calibrated_prox(IR_LEFT) >= PROX_THRESHOLD) ||
-		   (get_calibrated_prox(IR_RIGHT) >= PROX_THRESHOLD)) //If everything is alright
+		   (get_calibrated_prox(IR_RIGHT) >= PROX_THRESHOLD)) //Collision
 		{
 			palClearPad(GPIOD, GPIOD_LED_FRONT);
 			palClearPad(GPIOB, GPIOB_LED_BODY);
 			counter++;
 		}
-		else //If something is wrong (wall very close)
+		else //Everything is alright
 		{
 			palSetPad(GPIOD, GPIOD_LED_FRONT);
 			palSetPad(GPIOB, GPIOB_LED_BODY);
@@ -49,7 +47,7 @@ static THD_FUNCTION(wall_detection_thd, arg)
 		{
 			score = ((float) score_temp/ (float) counter)*100; //final score calculation [%]
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SD3, "Score:%.2f\n", score);
+			chprintf((BaseSequentialStream *)&SD3, "Score:%.2f\n", score); //Print score through UART3
 			score_calculation = 0;
 		}
 		score_calculation++;

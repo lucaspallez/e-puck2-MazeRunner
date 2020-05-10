@@ -7,6 +7,9 @@ typedef struct complex_float{
 	float imag;
 }complex_float;
 
+/*
+*	Computes arm_optimized FFT of audio buffer
+*/
 void doFFT_optimized(uint16_t size, float* complex_buffer);
 
 #endif /* FFT_H */

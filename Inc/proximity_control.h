@@ -10,14 +10,11 @@
 #define NB_SENSOR				2		//Use of the 2 front sensors only
 #define MAX_SCORE_PER_COUNT		1
 #define PROX_THRESHOLD			1000 	//Empirically determined
-#define NOISE_THRESHOLD			2		//Empirically determined, margin for perfect score
-#define WALL_WIDTH_THRESHOLD	50		//Empirically determined, stop counting when turning
-#define PATH_CENTER 			65		//Empirically determined, will change when physical path is built
-#define	PATH_CENTER_MARGIN 		10		//If not straight, maximum value is set
 
 
+/*
+*	Starts wall_detection and score calculation thread
+*/
 void wall_detection_start(void);
-
-void score_calculation_start(void);
 
 #endif /* INC_PROXIMITY_CONTROL_H_ */

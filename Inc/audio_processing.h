@@ -20,8 +20,14 @@ typedef enum {
 
 void processAudioData(int16_t *data, uint16_t num_samples);
 
+/*
+*	Finds the peak frequency in the FFT result
+*/
 void peak_finder(void);
 
+/*
+*	Returns the peak frequency from the actual FFT result
+*/
 float get_frequency(void);
 /*
 *	Returns the pointer to the BUFFER_NAME_t buffer asked

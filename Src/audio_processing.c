@@ -28,20 +28,9 @@ static float micBack_output[FFT_SIZE];
 
 static float frequency = 0;
 
-#define THRESHOLD 			10000
-#define MIN_FREQ			20 //312.5Hz
-#define MAX_FREQ			60 //937.5Hz
-/*
- * Violon:
- *
- * Do: 265.625
- * Re: 296.875
- * Mi: 328.125
- * Fa: 375
- * Sol: 406.25
- * La: 453.125
- *
- */
+#define THRESHOLD 			10000 	//Empirically determined by testing
+#define MIN_FREQ			20 		//312.5Hz
+#define MAX_FREQ			60 		//937.5Hz
 
 /*
 *	Callback called when the demodulation of the four microphones is done.
@@ -121,8 +110,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 				must_send = 0;
 			}
 		must_send++;
-		//Control motors depending on the frequency heard
-		//motor_control(freq);
+
 	}
 }
 
@@ -132,20 +120,19 @@ void peak_finder(void)
 	float peak = THRESHOLD;
 	for(int i=MIN_FREQ; i<MAX_FREQ; i++)
 	{
-		if(micRight_output[i] > peak)
+		if(micBack_output[i] > peak)
 		{
 			peak = micBack_output[i];
-			position = i;
+			position = i; 			//position represents the frequency
 		}
 	}
-	frequency = position*15.625;
+	frequency = position*15.625; 	//conversion into Hz from raw data
 }
 
 float get_frequency(void)
 {
 	return frequency;
 }
-
 
 float* get_audio_buffer_ptr(BUFFER_NAME_t name){
 	if(name == LEFT_CMPLX_INPUT){

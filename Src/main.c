@@ -39,7 +39,7 @@ static void serial_start(void)
 
 int main(void)
 {
-
+	//ChibiOS initialization
     halInit();
     chSysInit();
     mpu_init();
@@ -57,7 +57,7 @@ int main(void)
 	//init messagebus
 	messagebus_init(&bus, &bus_lock, &bus_condvar);
 
-	//start wall detection thread
+	//start wall detection and score calculation thread
 	wall_detection_start();
 
 	//starts the microphones processing thread.
