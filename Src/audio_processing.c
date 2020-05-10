@@ -26,6 +26,8 @@ static float micRight_output[FFT_SIZE];
 static float micFront_output[FFT_SIZE];
 static float micBack_output[FFT_SIZE];
 
+static float frequency = 0;
+
 #define THRESHOLD 			10000
 #define MIN_FREQ			20 //312.5Hz
 #define MAX_FREQ			60 //937.5Hz
@@ -109,22 +111,22 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		arm_cmplx_mag_f32(micBack_cmplx_input, micBack_output, FFT_SIZE);
 
 		//Finds peak frequency
-		float freq = peak_finder();
+		peak_finder();
 		nb_samples = 0;
 
 		if(must_send == 10) //reduce debug message frequency to 1Hz
 			{
 				chBSemSignal(&sendToComputer_sem);
-				chprintf((BaseSequentialStream *)&SDU1, "freq:%f\n", freq);
+				chprintf((BaseSequentialStream *)&SDU1, "freq:%f\n", frequency);
 				must_send = 0;
 			}
 		must_send++;
 		//Control motors depending on the frequency heard
-		motor_control(freq);
+		//motor_control(freq);
 	}
 }
 
-float peak_finder()
+void peak_finder(void)
 {
 	uint16_t position = 0;
 	float peak = THRESHOLD;
@@ -136,9 +138,14 @@ float peak_finder()
 			position = i;
 		}
 	}
-	float frequency = position*15.625;
+	frequency = position*15.625;
+}
+
+float get_frequency(void)
+{
 	return frequency;
 }
+
 
 float* get_audio_buffer_ptr(BUFFER_NAME_t name){
 	if(name == LEFT_CMPLX_INPUT){

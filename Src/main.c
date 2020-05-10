@@ -16,6 +16,7 @@
 #include <Inc/main.h>
 #include <Inc/fft.h>
 #include <Inc/audio_processing.h>
+#include <Inc/motor_control.h>
 #include <Inc/proximity_control.h>
 
 
@@ -65,6 +66,9 @@ int main(void)
 	//starts the microphones processing thread.
 	//it calls the callback given in parameter when samples are ready
 	mic_start(&processAudioData);
+
+	//start motor control thread
+	motor_control_start();
 
     /* Infinite loop. */
     while (1)

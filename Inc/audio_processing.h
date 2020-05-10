@@ -20,8 +20,9 @@ typedef enum {
 
 void processAudioData(int16_t *data, uint16_t num_samples);
 
-float peak_finder(void);
+void peak_finder(void);
 
+float get_frequency(void);
 /*
 *	Returns the pointer to the BUFFER_NAME_t buffer asked
 */
