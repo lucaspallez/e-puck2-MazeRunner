@@ -59,9 +59,8 @@ static THD_FUNCTION(motor_control_thd, arg)
 				//turn left 6-diff steps
 				turn_left();
 				rotation=1;
-				if ((left_motor_get_pos()<(-1)*(((float)53)/((float)41))*(((float)1000)/((float)6))*(6-diff)) &&
-					(right_motor_get_pos()>(((float)53)/((float)41))*(((float)1000)/((float)6))*(6-diff)))
-					//(53/41)=rapport entre le diametre du robot et les roues, 1000 nombre de microstep par rotation de roues,
+				if ((left_motor_get_pos() < (-1) * STEP2SECTION * (NB_SECTIONS-diff)) &&
+					(right_motor_get_pos() > STEP2SECTION * (NB_SECTIONS-diff)))
 					//6-diff nombre de 6e de cercle a effectuer
 				{
 					stop();
@@ -76,8 +75,8 @@ static THD_FUNCTION(motor_control_thd, arg)
 				//turn right diff steps
 				turn_right();
 				rotation=1;
-				if ((right_motor_get_pos()<(-1)*((float)53/(float)41)*((float)1000/(float)6)*diff) &&
-					(left_motor_get_pos()>((float)53/(float)41)*((float)1000/(float)6)*diff))
+				if ((right_motor_get_pos() < (-1) * STEP2SECTION * diff) &&
+					(left_motor_get_pos() > STEP2SECTION * diff))
 					//diff 6e de cercle a effectuer
 				{
 					stop();
@@ -96,8 +95,8 @@ static THD_FUNCTION(motor_control_thd, arg)
 				//turn right 6-diff steps
 				turn_right();
 				rotation=1;
-				if ((right_motor_get_pos()<((-1)*((float)53/(float)41)*((float)1000/(float)6)*(6-diff))) &&
-					(left_motor_get_pos()>(((float)53/(float)41)*((float)1000/(float)6)*(6-diff))))
+				if ((right_motor_get_pos() < STEP2SECTION * (NB_SECTIONS-diff)) &&
+					(left_motor_get_pos() > STEP2SECTION * (NB_SECTIONS-diff)))
 				{
 					stop();
 					rotation=0;
@@ -110,8 +109,8 @@ static THD_FUNCTION(motor_control_thd, arg)
 			{
 				turn_left();
 				rotation=1;
-				if ((left_motor_get_pos()<(-1)*((float)53/(float)41)*((float)1000/(float)6)*diff) &&
-					(right_motor_get_pos()>((float)1000/(float)6)*((float)53/(float)41)*diff))
+				if ((left_motor_get_pos() < (-1)*STEP2SECTION * diff) &&
+					(right_motor_get_pos() > STEP2SECTION * diff))
 				{
 					stop();
 					rotation=0;
