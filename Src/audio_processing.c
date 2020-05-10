@@ -7,7 +7,6 @@
 #include <audio/microphone.h>
 #include <Inc/audio_processing.h>
 #include <Inc/fft.h>
-#include <Inc/motor_control.h>
 #include <arm_math.h>
 #include <sensors/proximity.h>
 
@@ -41,7 +40,8 @@ static float frequency = 0;
 *							so we have [micRight1, micLeft1, micBack1, micFront1, micRight2, etc...]
 *	uint16_t num_samples	Tells how many data we get in total (should always be 640)
 */
-void processAudioData(int16_t *data, uint16_t num_samples){
+void processAudioData(int16_t *data, uint16_t num_samples)
+{
 
 	/*
 	*
@@ -53,7 +53,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 	static uint16_t must_send = 0;
 	static uint16_t nb_samples = 0;
 	//loop to fill the buffers
-	for(uint16_t i = 0 ; i < num_samples ; i+=4){
+	for(uint16_t i = 0 ; i < num_samples ; i+=4)
+	{
 		//construct an array of complex numbers. Put 0 to the imaginary part
 		micRight_cmplx_input[nb_samples] = (float)data[i + MIC_RIGHT];
 		micLeft_cmplx_input[nb_samples] = (float)data[i + MIC_LEFT];
@@ -70,12 +71,13 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		nb_samples++;
 
 		//stop when buffer is full
-		if(nb_samples >= (2 * FFT_SIZE)){
+		if(nb_samples >= (2 * FFT_SIZE))
+		{
 			break;
 		}
 	}
-
-	if(nb_samples >= (2 * FFT_SIZE)){
+	if(nb_samples >= (2 * FFT_SIZE))
+	{
 		/*	FFT proccessing
 		*
 		*	This FFT function stores the results in the input buffer given.
@@ -102,15 +104,6 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		//Finds peak frequency
 		peak_finder();
 		nb_samples = 0;
-
-		if(must_send == 10) //reduce debug message frequency to 1Hz
-			{
-				chBSemSignal(&sendToComputer_sem);
-				//chprintf((BaseSequentialStream *)&SDU1, "freq:%f\n", frequency);
-				must_send = 0;
-			}
-		must_send++;
-
 	}
 }
 
