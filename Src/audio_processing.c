@@ -117,7 +117,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		if(must_send == 10) //reduce debug message frequency to 1Hz
 			{
 				chBSemSignal(&sendToComputer_sem);
-				chprintf((BaseSequentialStream *)&SDU1, "freq:%f\n", frequency);
+				//chprintf((BaseSequentialStream *)&SDU1, "freq:%f\n", frequency);
 				must_send = 0;
 			}
 		must_send++;

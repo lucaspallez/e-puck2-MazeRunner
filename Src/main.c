@@ -60,9 +60,6 @@ int main(void)
 	//start wall detection thread
 	wall_detection_start();
 
-	//start score calculation thread
-	score_calculation_start(); //Works but not reliable yet
-
 	//starts the microphones processing thread.
 	//it calls the callback given in parameter when samples are ready
 	mic_start(&processAudioData);
