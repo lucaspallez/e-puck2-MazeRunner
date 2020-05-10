@@ -49,7 +49,7 @@ static THD_FUNCTION(wall_detection_thd, arg)
 		{
 			score = ((float) score_temp/ (float) counter)*100; //final score calculation [%]
 			chBSemSignal(&sendToComputer_sem);
-			chprintf((BaseSequentialStream *)&SDU1, "Score:%.2f\n", score);
+			chprintf((BaseSequentialStream *)&SD3, "Score:%.2f\n", score);
 			score_calculation = 0;
 		}
 		score_calculation++;
